@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Rock Paper Scissors</title>
+    <script src="https://kit.fontawesome.com/cc8516d608.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="title">
+            <h1>Rock Paper Scissors</h1>
+        </div>
+        <div class="scores">
+            <div class="scoreContainer">
+                <h1 class="scoreHeader" id="playerScoreHeader">You</h1>
+                <h2 class="score" id="playerScore">0</h2>
+            </div>
+            <div class="scoreContainer">
+                <h1 class="scoreHeader" id="computerScoreHeader">Computer</h1>
+                <h2 class="score" id="computerScore">0</h2>
+            </div>
+        </div>
+        <div class="selectionDisplay">
+            <div class="playerHand">
+                <i class="far fa-hand-rock fa-rotate-90" id="playerHand"></i>
+            </div>
+            <div class="computerHand">
+                <i class="far fa-hand-rock fa-rotate-90" id="computerHand"></i>
+            </div>
+        </div>
+        <div class="playButtons">
+            <button class="playBtn" id="rock"><i class="far fa-hand-rock fa-rotate-90"></i></button>
+            <button class="playBtn" id="paper"><i class="far fa-hand-paper fa-rotate-90"></i></button>
+            <button class="playBtn" id="scissors"><i class="far fa-hand-scissors fa-flip-horizontal"></i></button>
+        </div>
+
+        <div class="results">
+            <h1 id="resultDisplay">Choose your weapon</h1>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

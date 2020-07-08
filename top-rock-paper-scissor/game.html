@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //Make list of possible results
+        let results = ["Rock", "Paper", "Scissors"];
+
+        function computerPlay() {
+            //Get random number to use as index in result array
+            let resultIndex = Math.floor(Math.random() * 3);
+            return results[resultIndex];
+        }
+
+        function playRound(playerSelection, computerSelection) {
+            //Normalize player input
+            let playerInput = playerSelection.toLowerCase();
+            playerInput = playerInput.replace(playerInput.charAt(0), playerInput.charAt(0).toUpperCase());
+            //get computer input
+            let computerInput = computerSelection;
+            //Solve ties
+            if (playerInput == computerInput) {
+                console.log("Its a tie!");
+                return 0;
+            } else {
+                //Make string with combined inputs
+                let roundString = playerSelection + computerSelection;
+                let round = playerInput + computerInput;
+                switch (round) {
+                    case "RockPaper":
+                    case "PaperScissors":
+                    case "ScissorsRock":
+                        console.log(`You Lose this round! ${computerInput} beats ${playerInput}`);
+                        return (-1);
+                        break;
+                    case "PaperRock":
+                    case "RockScissors":
+                    case "ScissorsPaper":
+                        console.log(`You Win this round! ${playerInput} beats ${computerInput}`);
+                        return 1;
+                        break;
+                }
+            }
+        }
+
+        function game() {
+            let score = 0;
+            for (let i = 0; i < 5; i++) {
+                //Get user input
+                let userInput = prompt("Rock, Paper or Scissors?");
+                //Play round and add result to score
+                score += playRound(userInput, computerPlay());
+                console.log(score);
+            }
+            if (score == 0) {
+                console.log("The game ended in a tie. Please try again");
+            } else if (score > 0) {
+                console.log("You win the game! Congratulations");
+            } else {
+                console.log("You lost... Try again!")
+            }
+        }
+    </script>
+
+</body>
+
+</html>
